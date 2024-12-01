@@ -6,7 +6,7 @@ const day = argv[2]
 const cookie = process.env.COOKIE
 
   ; (async () => {
-    const res = await fetch(`https://adventofcode.com/2016/day/${day}/input`, { headers: { cookie } })
+    const res = await fetch(`https://adventofcode.com/2024/day/${day}/input`, { headers: { cookie } })
     const input = await res.text()
     const pday = day.padStart(2, 0)
     const inputFile = `${pday}/${day}.txt`
