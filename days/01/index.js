@@ -1,7 +1,7 @@
 const { readFileSync } = require('node:fs')
 const { basename } = require('node:path')
 
-const day = basename(__filename, '.js')
+const day = basename(__dirname)
 const input = readFileSync(__dirname + `/${day}.txt`, 'utf8').trim().split('\n')
 
 for (let part2 of [false,true]) {

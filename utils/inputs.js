@@ -8,8 +8,8 @@ const lastDay = getLastDay() ?? 0
 const day = type === 'next' ? (lastDay + 1) : (lastDay || 1)
 const pday = String(day).padStart(2, 0)
 
-const inputFile = `days/${pday}/${day}.txt`
-const scriptFile = `days/${pday}/${day}.js`
+const inputFile = `days/${pday}/${pday}.txt`
+const scriptFile = `days/${pday}/index.js`
 const solveFile = `days/${pday}/solve.js`
 const wrapperTemplateFile = `utils/wrapper-template.js`
 const solveTemplateFile = `utils/solve-template.js`
@@ -29,17 +29,17 @@ const cookie = `session=${AOC_SESSION}`
     }
 
     if (existsSync(inputFile)) {
-      console.log(`${day}.txt already written`);
+      console.log(`${pday}.txt already written`);
     } else {
       writeFileSync(inputFile, input)
-      console.log(`${day}.txt written`);
+      console.log(`${pday}.txt written`);
     }
 
     if (existsSync(scriptFile)) {
-      console.log(`${day}.js already copied`);
+      console.log(`index.js already copied`);
     } else {
       copyFileSync(wrapperTemplateFile, scriptFile)
-      console.log(`${day}.js copied`);
+      console.log(`index.js copied`);
     }
 
     if (existsSync(solveFile)) {

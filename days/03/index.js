@@ -3,7 +3,7 @@ const { basename } = require('node:path')
 
 const solve = require('./solve')
 
-const day = basename(__filename, '.js')
+const day = basename(__dirname)
 const input = readFileSync(__dirname + `/${day}.txt`, 'utf8').trim()
 
 console.log(`day ${day}`);
